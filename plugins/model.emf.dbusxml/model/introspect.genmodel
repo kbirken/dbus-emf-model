@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/model.emf.dbusxml/src-gen"
+    modelPluginID="model.emf.dbusxml" modelName="Introspect" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>introspect.ecore</foreignModel>
+  <genPackages prefix="Dbusxml" basePackage="model.emf" resource="XML" disposableProviderFactory="true"
+      ecorePackage="introspect.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="introspect.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//AccessType/read"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//AccessType/write"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//AccessType/readwrite"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="introspect.ecore#//DirectionType">
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//DirectionType/in"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//DirectionType/out"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="introspect.ecore#//ObligationType">
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//ObligationType/Mandatory"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//ObligationType/Optional"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="introspect.ecore#//PocType">
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//PocType/Yes"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//PocType/No"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="introspect.ecore#//StatusType">
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//StatusType/Approved"/>
+      <genEnumLiterals ecoreEnumLiteral="introspect.ecore#//StatusType/Pending"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="introspect.ecore#//AccessTypeObject"/>
+    <genDataTypes ecoreDataType="introspect.ecore#//DirectionTypeObject"/>
+    <genDataTypes ecoreDataType="introspect.ecore#//ObligationTypeObject"/>
+    <genDataTypes ecoreDataType="introspect.ecore#//PocTypeObject"/>
+    <genDataTypes ecoreDataType="introspect.ecore#//StatusTypeObject"/>
+    <genClasses ecoreClass="introspect.ecore#//AnnotationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//AnnotationType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//AnnotationType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//ArgType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//ArgType/doc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//DocType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//DocType/line"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//DocumentRoot/node"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//ErrorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//ErrorType/doc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ErrorType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//InterfaceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//InterfaceType/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//InterfaceType/doc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//InterfaceType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//InterfaceType/method"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//InterfaceType/signal"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//InterfaceType/property"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//InterfaceType/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//InterfaceType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//MethodType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//MethodType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//MethodType/poc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//MethodType/obligation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//MethodType/doc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//MethodType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//MethodType/arg"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//MethodType/annotation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//MethodType/error"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//MethodType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//NodeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//NodeType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//NodeType/node"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//NodeType/interface"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//NodeType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//PropertyType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/poc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/obligation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//PropertyType/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//PropertyType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="introspect.ecore#//SignalType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//SignalType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//SignalType/poc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//SignalType/obligation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//SignalType/doc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//SignalType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//SignalType/arg"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//SignalType/annotation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference introspect.ecore#//SignalType/error"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//SignalType/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
