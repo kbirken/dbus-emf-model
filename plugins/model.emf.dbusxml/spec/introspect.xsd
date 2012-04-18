@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="introspect.dtd"
-	xmlns:wmh="http://www.wmhelp.com/2003/eGenerator" elementFormDefault="qualified"
-	targetNamespace="introspect.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="introspect.dtd" xmlns:wmh="http://www.wmhelp.com/2003/eGenerator" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="introspect.dtd">
 	<xs:element name="node">
 		<xs:annotation>
 			<xs:documentation> DTD for D-Bus Introspection data
@@ -22,65 +20,65 @@
 			<xs:documentation> Generic metadata </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
-			<xs:choice minOccurs="0" maxOccurs="unbounded">
-				<xs:element ref="node" />
-				<xs:element name="interface" type="interfaceType" />
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element ref="node"/>
+				<xs:element name="interface" type="interfaceType"/>
 			</xs:choice>
-			<xs:attribute name="name" type="xs:string" />
+			<xs:attribute name="name" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="interfaceType">
 		<xs:sequence>
 			<xs:element name="version" type="xs:string"/>
-			<xs:element name="doc" type="docType" />
-			<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="doc" type="docType"/>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
 				<xs:element name="method" type="methodType"/>
 				<xs:element name="signal" type="signalType"/>
 				<xs:element name="property" type="propertyType"/>
 				<xs:element name="annotation" type="annotationType"/>
 			</xs:choice>
 		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="methodType">
 		<xs:sequence>
-			<xs:element name="status" type="statusType" minOccurs="0"/>		
-			<xs:element name="poc" type="pocType" minOccurs="0"/>		
-			<xs:element name="obligation" type="obligationType" minOccurs="0"/>		
+			<xs:element minOccurs="0" name="status" type="statusType"/>		
+			<xs:element minOccurs="0" name="poc" type="pocType"/>		
+			<xs:element minOccurs="0" name="obligation" type="obligationType"/>		
 			<xs:element name="doc" type="docType"/>
-			<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
 				<xs:element name="arg" type="argType"/>
 				<xs:element name="annotation" type="annotationType"/>
 				<xs:element name="error" type="errorType"/>
 			</xs:choice>
 		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="signalType">
 		<xs:sequence>
-			<xs:element name="status" type="statusType" minOccurs="0"/>		
-			<xs:element name="poc" type="pocType" minOccurs="0"/>		
-			<xs:element name="obligation" type="obligationType" minOccurs="0"/>		
+			<xs:element minOccurs="0" name="status" type="statusType"/>		
+			<xs:element minOccurs="0" name="poc" type="pocType"/>		
+			<xs:element minOccurs="0" name="obligation" type="obligationType"/>		
 			<xs:element name="doc" type="docType"/>
-			<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
 				<xs:element name="arg" type="argType"/>
 				<xs:element name="annotation" type="annotationType"/>
 				<xs:element name="error" type="errorType"/>				
 			</xs:choice>
 		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="argType">
 		<xs:sequence>
 			<xs:element name="doc" type="docType"/>
 		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" />
-		<xs:attribute name="type" type="xs:string" use="required" />
-		<xs:attribute name="direction" default="in">
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute default="in" name="direction">
 			<xs:simpleType>
 				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="in" />
-					<xs:enumeration value="out" />
+					<xs:enumeration value="in"/>
+					<xs:enumeration value="out"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -89,35 +87,33 @@
 		<xs:annotation>
 			<xs:documentation> AKA "attribute" </xs:documentation>
 		</xs:annotation>
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="status" type="statusType" minOccurs="0"/>		
-			<xs:element name="poc" type="pocType" minOccurs="0"/>		
-			<xs:element name="obligation" type="obligationType" minOccurs="0"/>		
+		<xs:sequence maxOccurs="unbounded" minOccurs="0">
+			<xs:element minOccurs="0" name="status" type="statusType"/>		
+			<xs:element minOccurs="0" name="poc" type="pocType"/>		
+			<xs:element minOccurs="0" name="obligation" type="obligationType"/>		
 			<xs:element name="annotation" type="annotationType"/>
 		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required" />
-		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="xs:string" use="required"/>
 		<xs:attribute name="access" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:NMTOKEN">
-					<xs:enumeration value="read" />
-					<xs:enumeration value="write" />
-					<xs:enumeration value="readwrite" />
+					<xs:enumeration value="read"/>
+					<xs:enumeration value="write"/>
+					<xs:enumeration value="readwrite"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="annotationType">
-		<xs:attribute name="name" type="xs:string" use="required" />
-		<xs:attribute name="value" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="value" type="xs:string" use="required"/>
 	</xs:complexType>
 
 	<!-- proprietary extensions from LBS-EG -->
-<!--  	<xs:complexType name="versionType" /> -->
 	<xs:complexType name="docType">
 		<xs:sequence>
-<!--  			<xs:element maxOccurs="unbounded" name="line" type="lineType"/> -->
-		<xs:element maxOccurs="unbounded" name="line" type="xs:string" />
+		<xs:element maxOccurs="unbounded" name="line" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
 	
