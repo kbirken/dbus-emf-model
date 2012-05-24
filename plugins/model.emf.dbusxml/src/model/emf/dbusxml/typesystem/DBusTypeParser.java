@@ -62,27 +62,39 @@ public class DBusTypeParser {
 	}
 	
 	private DBusType parseSingleCompleteType() {
-		DBusType res = null;
-		switch (type.charAt(index)) {
-		case 'y': index++; res = DBusBasicType.DBUS_TYPE_INT8; break;
-		case 'b': index++; res = DBusBasicType.DBUS_TYPE_BOOLEAN; break;
-		case 'n': index++; res = DBusBasicType.DBUS_TYPE_INT16; break;
-		case 'q': index++; res = DBusBasicType.DBUS_TYPE_UINT16; break;
-		case 'i': index++; res = DBusBasicType.DBUS_TYPE_INT32; break;
-		case 'u': index++; res = DBusBasicType.DBUS_TYPE_UINT32; break;
-		case 'x': index++; res = DBusBasicType.DBUS_TYPE_INT64; break;
-		case 't': index++; res = DBusBasicType.DBUS_TYPE_UINT64; break;
-		case 'd': index++; res = DBusBasicType.DBUS_TYPE_DOUBLE; break;
-		case 's': index++; res = DBusBasicType.DBUS_TYPE_STRING; break;
-		case 'o': /* Object Path - not supported */ break;
-		case 'g': /* Type signature - not supported */ break;
-		case 'a': index++; res = parseArrayType(); break;
-		case '(': index++; res = parseStructType(); break;
-		case 'v': index++; res = DBusBasicType.DBUS_TYPE_VARIANT; break;
-		case '{': index++; res = parseDictEntryType(); break;
-		case 'h': /* UNIX FD - not supported */ break;
-		}
+		// progress to next character first
+		char c = type.charAt(index);
+		index++;
 
+		DBusType res = null;
+		switch (c) {
+			case 'y': res = DBusBasicType.DBUS_TYPE_INT8; break;
+			case 'b': res = DBusBasicType.DBUS_TYPE_BOOLEAN; break;
+			case 'n': res = DBusBasicType.DBUS_TYPE_INT16; break;
+			case 'q': res = DBusBasicType.DBUS_TYPE_UINT16; break;
+			case 'i': res = DBusBasicType.DBUS_TYPE_INT32; break;
+			case 'u': res = DBusBasicType.DBUS_TYPE_UINT32; break;
+			case 'x': res = DBusBasicType.DBUS_TYPE_INT64; break;
+			case 't': res = DBusBasicType.DBUS_TYPE_UINT64; break;
+			case 'd': res = DBusBasicType.DBUS_TYPE_DOUBLE; break;
+			case 's': res = DBusBasicType.DBUS_TYPE_STRING; break;
+			
+			// object path - will be converted to String type without further checks
+			case 'o': res = DBusBasicType.DBUS_TYPE_STRING; break;
+	
+			// type signature - will be converted to String type without further checks
+			case 'g': res = DBusBasicType.DBUS_TYPE_STRING; break;
+			
+			// UNIX file descriptor - will be mapped to UINT32 type without further checks
+			case 'h': res = DBusBasicType.DBUS_TYPE_UINT32; break;
+	
+			// complex types
+			case 'a': res = parseArrayType(); break;
+			case '(': res = parseStructType(); break;
+			case 'v': res = DBusBasicType.DBUS_TYPE_VARIANT; break;
+			case '{': res = parseDictEntryType(); break;
+		}
+		
 		return res;
 	}
 
