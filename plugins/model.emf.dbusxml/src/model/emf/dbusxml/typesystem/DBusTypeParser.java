@@ -43,6 +43,23 @@ public class DBusTypeParser {
 		return res;
 	}
 
+
+	public DBusTypeList parseTypeList (String type) {
+		this.type = type;
+		this.index = 0;
+
+		DBusTypeList res = parseTypeList(false);
+		for(DBusType t : res) {
+			if (! t.validate()) {
+				return null;
+			}
+		}
+		
+		// parsing and validation successful
+		return res;
+	}
+
+
 	// ********************************************************************************
 	
 	private DBusTypeList parseTypeList (boolean expectClosingBracket) {
