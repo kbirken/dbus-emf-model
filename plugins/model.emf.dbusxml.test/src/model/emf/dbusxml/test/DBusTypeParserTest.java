@@ -112,5 +112,17 @@ public class DBusTypeParserTest {
 		assertTrue(genTypeList.get(1) instanceof DBusStructType);
 		assertTrue(genTypeList.get(2) instanceof DBusBasicType);
 	}
-
+	
+	
+	@Test
+	public void testComplexType1() { //from Genivi Audio manager command plugin 
+		DBusTypeParser  parser = new DBusTypeParser();
+		DBusType genType = parser.parseSingleType("a(qs(nn)nnq)");
+		assertTrue(genType instanceof DBusArrayType);
+		
+		DBusArrayType array = (DBusArrayType)genType;
+		DBusStructType struct = (DBusStructType)array.getElementType();
+		System.out.println(struct.getElementTypes().size());
+		assertTrue(struct.getElementTypes().size() == 6);
+	}
 }
