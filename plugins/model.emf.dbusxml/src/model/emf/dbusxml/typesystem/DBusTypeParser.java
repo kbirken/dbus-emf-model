@@ -22,13 +22,18 @@ package model.emf.dbusxml.typesystem;
 public class DBusTypeParser {
 	private int index;
 	private String type;
-
+	
 	public DBusType parseSingleType (String type) {
 		this.type = type;
 		this.index = 0;
 
 		// parse signature string
 		DBusType res = parseSingleCompleteType();
+		
+		if (index != type.length()) {
+			throw new IllegalArgumentException("multitypes not supported");
+		}
+				
 		if (res==null) {
 			// parse error
 			return null;
@@ -131,6 +136,8 @@ public class DBusTypeParser {
 
 	private DBusStructType parseStructType() {
 		DBusTypeList typeList = parseTypeList(true);
+		//SB
+		index++;
 		return new DBusStructType(typeList);
 	}
 

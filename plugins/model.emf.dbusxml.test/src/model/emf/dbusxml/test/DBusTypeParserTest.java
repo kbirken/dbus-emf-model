@@ -1,128 +1,161 @@
 package model.emf.dbusxml.test;
+
+import org.junit.Test;
 import static org.junit.Assert.*;
-
-import java.util.Iterator;
-
 import model.emf.dbusxml.typesystem.DBusArrayType;
 import model.emf.dbusxml.typesystem.DBusBasicType;
 import model.emf.dbusxml.typesystem.DBusDictType;
 import model.emf.dbusxml.typesystem.DBusStructType;
 import model.emf.dbusxml.typesystem.DBusType;
-import model.emf.dbusxml.typesystem.DBusTypeList;
 import model.emf.dbusxml.typesystem.DBusTypeParser;
-
-import org.junit.Test;
-
 
 public class DBusTypeParserTest {
 
 	@Test
 	public void testPrimitive() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("i");
+		String signature = "i";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusBasicType );
 		assertTrue(genType != null);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testDict() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("a{ii}");
+		String signature = "a{ii}";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusDictType );
 		assertTrue(genType != null);
 		assertTrue(((DBusDictType)genType).getKeyType() instanceof DBusBasicType);
 		assertTrue(((DBusDictType)genType).getValueType() instanceof DBusBasicType);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testStruct() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("(ii)");
+		String signature = "(ii)";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusStructType );
 		assertTrue(genType != null);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testArray() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("ai");
+		String signature = "ai";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusArrayType );
 		assertTrue(genType != null);
 		assertTrue(((DBusArrayType)genType).getElementType() instanceof DBusBasicType);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testArrayStrcut() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("a(ii)");
+		String signature = "a(ii)";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusArrayType );
 		assertTrue(genType != null);
 		assertTrue(((DBusArrayType)genType).getElementType() instanceof DBusStructType);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testArrayDict() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("aa{ii}");
+		String signature = "aa{ii}";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusArrayType );
-		assertTrue(genType != null);
-		
+		assertTrue(genType != null);		
 		assertTrue(((DBusArrayType)genType).getElementType() instanceof DBusDictType);
 		DBusDictType dict = (DBusDictType)((DBusArrayType)genType).getElementType();
 		assertTrue(dict.getKeyType() instanceof DBusBasicType);
 		assertTrue(dict.getValueType() instanceof DBusBasicType);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
 	public void testDictWithStruct() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("a{i(ii)}");
+		String signature = "a{i(ii)}";
+		DBusType genType = parser.parseSingleType(signature);
 		assertTrue(genType instanceof DBusDictType );
 		assertTrue(genType != null);
 		DBusDictType dict = (DBusDictType)genType;
 		assertTrue(dict.getKeyType() instanceof DBusBasicType);
 		assertTrue(dict.getValueType() instanceof DBusStructType);
+		System.out.println("parsing " + signature + " --> " + genType.getName());
 	}
 	
 	@Test
-	public void testMultiLinePrimitive() {
+	public void testNestedStruct() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusTypeList genTypeList = parser.parseTypeList("iii");
-		assertTrue(genTypeList.size() == 3);
-		for (Iterator<DBusType> genTypeIterator = genTypeList.iterator(); genTypeIterator.hasNext();) {
-			assertTrue(genTypeIterator.next() instanceof DBusBasicType);
-		}	
+		String signature = "(i(ii(iii))iii(i)ii)";
+		DBusType genType = parser.parseSingleType(signature);
+		assertTrue(genType instanceof DBusStructType );
+		assertTrue(genType != null);
+		assertTrue(genType.getName()
+				.equals("Struct[Int32,Struct[Int32,Int32,Struct[Int32,Int32,Int32]],Int32,Int32,Int32,Struct[Int32],Int32,Int32]"));
+		System.out.println("parsing " + signature + " --> " + genType.getName());
+	}
+	
+	@Test
+	public void testComplexType1() { //from Genivi Audio manager command plugin 
+		DBusTypeParser  parser = new DBusTypeParser();
+		String signature = "a(qs(nn)nnq)";
+		DBusType genType = parser.parseSingleType(signature);
+		assertTrue(genType instanceof DBusArrayType);		
+		DBusArrayType array = (DBusArrayType)genType;
+		DBusStructType struct = (DBusStructType)array.getElementType();	
+		assertTrue(struct.getElementTypes().size() == 6);
+		assertTrue(genType.getName()
+				.equals("Array[Struct[UInt16,String,Struct[Int16,Int16],Int16,Int16,UInt16]]"));
+		System.out.println("parsing " + signature + " --> " + genType.getName());
+	}
+	
+	@Test
+	public void testMultiPrimitive() {
+		DBusTypeParser  parser = new DBusTypeParser();
+		String signature = "ii";
+		try {
+			@SuppressWarnings("unused")
+			DBusType genType = parser.parseSingleType(signature);	
+		} catch (IllegalArgumentException e) {
+			System.out.println("parsing " + signature + " --> " + "null");
+			assertTrue(e.getMessage().equals("multitypes not supported"));
+		}
 	}
 	
 	@Test
 	public void testMultiLinePrimitiveAndStruct1() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusTypeList genTypeList = parser.parseTypeList("i(ii)");
-		assertTrue(genTypeList.size() == 2);
-		assertTrue(genTypeList.get(0) instanceof DBusBasicType);
-		assertTrue(genTypeList.get(1) instanceof DBusStructType);	
+		String signature = "i(ii)";
+		try {
+			@SuppressWarnings("unused")
+			DBusType genType = parser.parseSingleType(signature);
+			
+		} catch (IllegalArgumentException e) {
+			System.out.println("parsing " + signature + " --> " + "null");
+			assertTrue(e.getMessage().equals("multitypes not supported"));
+		}
 	}
 	
 	@Test
 	public void testMultiLinePrimitiveAndStruct2() {
 		DBusTypeParser  parser = new DBusTypeParser();
-		DBusTypeList genTypeList = parser.parseTypeList("i(ii)i");
-		assertTrue(genTypeList.size() == 3);
-		assertTrue(genTypeList.get(0) instanceof DBusBasicType);
-		assertTrue(genTypeList.get(1) instanceof DBusStructType);
-		assertTrue(genTypeList.get(2) instanceof DBusBasicType);
-	}
-	
-	
-	@Test
-	public void testComplexType1() { //from Genivi Audio manager command plugin 
-		DBusTypeParser  parser = new DBusTypeParser();
-		DBusType genType = parser.parseSingleType("a(qs(nn)nnq)");
-		assertTrue(genType instanceof DBusArrayType);
-		
-		DBusArrayType array = (DBusArrayType)genType;
-		DBusStructType struct = (DBusStructType)array.getElementType();
-		System.out.println(struct.getElementTypes().size());
-		assertTrue(struct.getElementTypes().size() == 6);
+		String signature = "i(ii)i";
+		try {
+			@SuppressWarnings("unused")
+			DBusType genType = parser.parseSingleType(signature);
+			
+		} catch (IllegalArgumentException e) {
+			System.out.println("parsing " + signature + " --> " + "null");
+			assertTrue(e.getMessage().equals("multitypes not supported"));
+		}
 	}
 }
