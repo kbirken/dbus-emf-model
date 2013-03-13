@@ -8,7 +8,7 @@
 
 	<groupId>model.emf.dbusxml</groupId>
 	<artifactId>model.emf.dbusxml.parent</artifactId>
-	<version>0.7.2-SNAPSHOT</version>
+	<version>0.7.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
