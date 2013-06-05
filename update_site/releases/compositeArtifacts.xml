@@ -5,10 +5,11 @@
   <properties size='1'>
     <property name='p2.timestamp' value='1247702408'/>
   </properties>
-  <children size='4'>
+  <children size='5'>
       <child location='0.7.0'/>
       <child location='0.7.1'/>
       <child location='0.7.2'/>
       <child location='0.7.3'/>
+      <child location='0.7.4'/>
   </children>
 </repository>

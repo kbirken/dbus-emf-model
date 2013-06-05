@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>model.emf.dbusxml</groupId>
 		<artifactId>model.emf.dbusxml.parent</artifactId>
-		<version>0.7.3-SNAPSHOT</version>
+		<version>0.7.4-SNAPSHOT</version>
 		<relativePath>../../releng/model.emf.dbusxml.parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>model.emf.dbusxml</artifactId>
-	<version>0.7.3-SNAPSHOT</version>
+	<version>0.7.4-SNAPSHOT</version>
 	<description>This Eclipse plugin contains an ecore model and some helper classes for D-Bus Introspection XML format.</description>
 	<packaging>eclipse-plugin</packaging>
 	<build>
