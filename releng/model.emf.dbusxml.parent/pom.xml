@@ -276,7 +276,7 @@
 		<repository>
 			<id>itemis2</id>
 			<layout>p2</layout>
-			<url>http://download.itemis.com/updates/milestones/</url>
+			<url>http://download.itemis.com/updates/releases/</url>
 		</repository>
 	</repositories>			
 
