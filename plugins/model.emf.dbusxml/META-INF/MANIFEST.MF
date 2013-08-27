@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: model.emf.dbusxml;singleton:=true
 Bundle-Version: 0.7.4.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Harman Infotainment Division
+Bundle-Vendor: itemis AG
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
