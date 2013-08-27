@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="model.emf.dbusxml.presentation.DbusxmlModelWizardID"
+            name="%_UI_DbusxmlModelWizard_label"
+            class="model.emf.dbusxml.presentation.DbusxmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DbusxmlModelFile.gif">
+         <description>%_UI_DbusxmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="model.emf.dbusxml.presentation.DbusxmlEditorID"
+            name="%_UI_DbusxmlEditor_label"
+            icon="icons/full/obj16/DbusxmlModelFile.gif"
+            extensions="dbusxml"
+            class="model.emf.dbusxml.presentation.DbusxmlEditor"
+            contributorClass="model.emf.dbusxml.presentation.DbusxmlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

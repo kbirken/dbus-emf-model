@@ -29,5 +29,7 @@ Workflow {
 	component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
 		genModel = "platform:/resource/model.emf.dbusxml/model/introspect.genmodel"
 		srcPath = ""
+		generateEdit = true
+		generateEditor = true
 	}
 }

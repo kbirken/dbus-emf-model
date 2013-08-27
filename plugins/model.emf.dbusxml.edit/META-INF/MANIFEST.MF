@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: model.emf.dbusxml.edit;singleton:=true
+Bundle-Version: 0.7.5.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: model.emf.dbusxml.provider.IntrospectEditPlugin$Implementation
+Bundle-Vendor: itemis AG
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: model.emf.dbusxml.provider
+Require-Bundle: org.eclipse.core.runtime,
+ model.emf.dbusxml;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
