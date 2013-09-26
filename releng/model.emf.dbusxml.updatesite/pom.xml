@@ -4,10 +4,11 @@
 	<parent>
 		<groupId>model.emf.dbusxml</groupId>
 		<artifactId>model.emf.dbusxml.parent</artifactId>
-		<version>0.7.5-SNAPSHOT</version>
+		<version>0.7.6-SNAPSHOT</version>
 		<relativePath>../../releng/model.emf.dbusxml.parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>model.emf.dbusxml.releng.updatesite</artifactId>
 	<packaging>eclipse-update-site</packaging>
+	<groupId>model.emf.dbusxml</groupId>
 </project>

@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>model.emf.dbusxml</groupId>
 		<artifactId>model.emf.dbusxml.parent</artifactId>
-		<version>0.7.5-SNAPSHOT</version>
+		<version>0.7.6-SNAPSHOT</version>
 		<relativePath>../../releng/model.emf.dbusxml.parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>model.emf.dbusxml.test</artifactId>
-	<version>0.7.5-SNAPSHOT</version>
+	<version>0.7.6-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<dependencies>
 		<!-- It is important to have JUnit >= 4.7 as dependency to select the right JUnit Provider see http://maven.apache.org/plugins/maven-surefire-plugin/examples/junit.html -->
@@ -56,4 +56,5 @@
 			</plugin>
 		</plugins>
 	</build>		
+	<groupId>model.emf.dbusxml</groupId>
 </project>
