@@ -3,14 +3,15 @@
 <repository name='&quot;dbus-emf-model update site (releases)&quot;'
     type='org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository' version='1.0.0'>
   <properties size='1'>
-    <property name='p2.timestamp' value='1247702410'/>
+    <property name='p2.timestamp' value='1247702420'/>
   </properties>
-  <children size='6'>
+  <children size='7'>
       <child location='0.7.0'/>
       <child location='0.7.1'/>
       <child location='0.7.2'/>
       <child location='0.7.3'/>
       <child location='0.7.4'/>
       <child location='0.7.5'/>
+      <child location='0.7.6'/>
   </children>
 </repository>
