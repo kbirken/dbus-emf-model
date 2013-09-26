@@ -69,6 +69,7 @@ public class DBusTypeParser {
 				DBusType sct = parseSingleCompleteType();
 				res.add(sct);
 			}
+			index++;
 		} else {
 			while (index < type.length()) {
 				DBusType sct = parseSingleCompleteType();
