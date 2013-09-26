@@ -20,9 +20,13 @@
 	</properties>
 
     <modules>
+    		<!-- actual code modules -->
             <module>../../plugins/model.emf.dbusxml</module>
             <module>../../plugins/model.emf.dbusxml.edit</module>
             <module>../../plugins/model.emf.dbusxml.editor</module>
+     		<!-- test modules -->
+            <module>../../plugins/model.emf.dbusxml.test</module>
+			<!-- release modules -->
 			<module>../../features/model.emf.dbusxml.feature</module>
 			<module>../../releng/model.emf.dbusxml.updatesite</module>
     </modules>
