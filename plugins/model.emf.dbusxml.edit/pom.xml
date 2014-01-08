@@ -5,12 +5,11 @@
 	<parent>
 		<groupId>model.emf.dbusxml</groupId>
 		<artifactId>model.emf.dbusxml.parent</artifactId>
-		<version>0.7.6-SNAPSHOT</version>
+		<version>0.7.7-SNAPSHOT</version>
 		<relativePath>../../releng/model.emf.dbusxml.parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>model.emf.dbusxml.edit</artifactId>
-	<version>0.7.6-SNAPSHOT</version>
 	<description>This Eclipse plugin contains the EMF edit code for the D-Bus Introspection XML format.</description>
 	<packaging>eclipse-plugin</packaging>
 </project>

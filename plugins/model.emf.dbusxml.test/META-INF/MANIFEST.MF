@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: model.emf.dbusxml.test;singleton:=true 
-Bundle-Version: 0.7.6.qualifier
+Bundle-Version: 0.7.7.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.junit,
  model.emf.dbusxml;bundle-version="0.7.6"
