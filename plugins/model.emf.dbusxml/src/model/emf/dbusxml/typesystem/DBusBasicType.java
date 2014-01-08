@@ -10,7 +10,7 @@ package model.emf.dbusxml.typesystem;
 
 public class DBusBasicType extends DBusType {
 
-	public static final DBusBasicType DBUS_TYPE_INT8    = new DBusBasicType("Int8");
+	public static final DBusBasicType DBUS_TYPE_BYTE    = new DBusBasicType("Byte");
 	public static final DBusBasicType DBUS_TYPE_INT16   = new DBusBasicType("Int16");
 	public static final DBusBasicType DBUS_TYPE_UINT16  = new DBusBasicType("UInt16");
 	public static final DBusBasicType DBUS_TYPE_INT32   = new DBusBasicType("Int32");

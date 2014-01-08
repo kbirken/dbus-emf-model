@@ -91,7 +91,7 @@ public class DBusTypeParser {
 
 		DBusType res = null;
 		switch (c) {
-			case 'y': res = DBusBasicType.DBUS_TYPE_INT8; break;
+			case 'y': res = DBusBasicType.DBUS_TYPE_BYTE; break;
 			case 'b': res = DBusBasicType.DBUS_TYPE_BOOLEAN; break;
 			case 'n': res = DBusBasicType.DBUS_TYPE_INT16; break;
 			case 'q': res = DBusBasicType.DBUS_TYPE_UINT16; break;
