@@ -55,6 +55,7 @@
     <genClasses ecoreClass="introspect.ecore#//ErrorType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//ErrorType/doc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ErrorType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ErrorType/id"/>
     </genClasses>
     <genClasses ecoreClass="introspect.ecore#//InterfaceType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//InterfaceType/version"/>
