@@ -141,7 +141,7 @@
       <details key="name" value="errorType"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="doc" lowerBound="1" eType="#//DocType"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doc" eType="#//DocType"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
