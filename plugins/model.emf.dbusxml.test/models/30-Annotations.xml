@@ -13,6 +13,7 @@
         <line>m1 = Method m1 description (findmedoc)</line>
       </doc>
       <arg direction="in" name="argInt8" type="n">
+        <annotation name='org.gtk.GDBus.Annotation' value='OnArg'/>
         <doc>
           <line>argInt8 = Argument m1.argInt8 description (findmedoc)</line>
         </doc>

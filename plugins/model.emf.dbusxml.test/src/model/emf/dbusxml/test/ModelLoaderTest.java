@@ -74,9 +74,9 @@ public class ModelLoaderTest {
 		// annotations on method arguments
 		assertEquals(2, m.getArg().size());
 		ArgType arg = m.getArg().get(0);
-//		assertEquals(1, arg.getAnnotation().size());
-//		AnnotationType annoArg = m.getAnnotation().get(0);
-//		assertEquals("OnArg", annoMethod.getValue());
+		assertEquals(1, arg.getAnnotation().size());
+		AnnotationType annoArg = arg.getAnnotation().get(0);
+		assertEquals("OnArg", annoArg.getValue());
 		
 		// annotations on signals
 		SignalType s = i.getSignal().get(0);

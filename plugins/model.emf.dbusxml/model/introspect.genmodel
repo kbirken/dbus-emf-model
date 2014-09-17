@@ -38,10 +38,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//AnnotationType/value"/>
     </genClasses>
     <genClasses ecoreClass="introspect.ecore#//ArgType">
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory=""
+          propertyDescription="" ecoreFeature="ecore:EReference introspect.ecore#//ArgType/annotation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference introspect.ecore#//ArgType/doc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/direction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute introspect.ecore#//ArgType/group"/>
     </genClasses>
     <genClasses ecoreClass="introspect.ecore#//DocType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute introspect.ecore#//DocType/line"/>
