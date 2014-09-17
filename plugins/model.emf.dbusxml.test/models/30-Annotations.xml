@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="introspect.xsl"?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="introspect.xsd" name="org.reference">
+  <interface name="org.reference.Test20">
+    <version>1.0</version>
+    <property access="readwrite" name="attrSubscrRW" type="i">
+      <annotation name='org.gtk.GDBus.Annotation' value='OnProperty'/>
+    </property>
+    <annotation name='org.gtk.GDBus.Annotation' value='OnInterface'/>
+    <method name="m1">
+      <annotation name='org.gtk.GDBus.Annotation' value='OnMethod'/>
+      <doc>
+        <line>m1 = Method m1 description (findmedoc)</line>
+      </doc>
+      <arg direction="in" name="argInt8" type="n">
+        <doc>
+          <line>argInt8 = Argument m1.argInt8 description (findmedoc)</line>
+        </doc>
+      </arg>
+      <arg direction="out" name="argUInt8" type="y">
+        <doc>
+          <line>argUInt8 = Description missing</line>
+        </doc>
+      </arg>
+    </method>
+    <signal name="b1">
+      <annotation name='org.gtk.GDBus.Annotation' value='OnSignal'/>
+      <doc>
+        <line>b1 = Broadcast b1 description (findmedoc)</line>
+      </doc>
+      <arg direction="out" name="arg1" type="u">
+        <doc>
+          <line>arg1 = Description missing</line>
+        </doc>
+      </arg>
+      <arg direction="out" name="arg2" type="s">
+        <doc>
+          <line>arg2 = Description missing</line>
+        </doc>
+      </arg>
+    </signal>
+  </interface>
+</node>
