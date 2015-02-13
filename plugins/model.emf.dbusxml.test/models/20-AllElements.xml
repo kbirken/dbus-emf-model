@@ -3,7 +3,11 @@
 <node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="introspect.xsd" name="org.reference">
   <interface name="org.reference.Test20">
     <version>1.0</version>
-    <property access="readwrite" name="attrSubscrRW" type="i"/>
+    <property access="readwrite" name="attrSubscrRW" type="i">
+      <doc>
+        <line>p1 = Property p1 description (findmedoc)</line>
+      </doc>
+    </property>
     <property access="read" name="attrSubscrRO" type="i"/>
     <property access="readwrite" name="attrNoSubscrRW" type="i"/>
     <property access="read" name="attrNoSubscrRO" type="i"/>

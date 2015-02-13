@@ -7,9 +7,11 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Iterator;
 
 import model.emf.dbusxml.AnnotationType;
 import model.emf.dbusxml.ArgType;
+import model.emf.dbusxml.DocType;
 import model.emf.dbusxml.DocumentRoot;
 import model.emf.dbusxml.InterfaceType;
 import model.emf.dbusxml.MethodType;
@@ -18,6 +20,7 @@ import model.emf.dbusxml.PropertyType;
 import model.emf.dbusxml.SignalType;
 import model.emf.dbusxml.util.DbusxmlResourceFactoryImpl;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -41,7 +44,14 @@ public class ModelLoaderTest {
 		assertEquals(4, i.getProperty().size());
 		assertEquals(4, i.getMethod().size());
 		assertEquals(2, i.getSignal().size());
+		
+		// docs on properties
+		
+		PropertyType p = i.getProperty().get(0);
+		assertEquals("p1 = Property p1 description (findmedoc)", content(p.getDoc()));
+		
 		// TODO: add more checks here (e.g., names of elements, details, ...)
+		
 	}
 
 	@Test
@@ -114,6 +124,16 @@ public class ModelLoaderTest {
 			fail();
 			return null;
 		}
+	}
+	
+	private String content (EList<DocType> it) {
+		String content = "";
+		for (Iterator<DocType> i1 = it.iterator(); i1.hasNext();) {
+			for (Iterator<String> i2 = i1.next().getLine().iterator(); i2.hasNext();) {
+				content = content.concat(i2.next());
+			}
+	    }
+		return content;
 	}
 
 }

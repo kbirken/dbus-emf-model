@@ -4,6 +4,9 @@
   <interface name="org.reference.Test20">
     <version>1.0</version>
     <property access="readwrite" name="attrSubscrRW" type="i">
+      <doc>
+        <line>p1 = Property p1 description (findmedoc)</line>
+      </doc>
       <annotation name='org.gtk.GDBus.Annotation' value='OnProperty'/>
     </property>
     <annotation name='org.gtk.GDBus.Annotation' value='OnInterface'/>
