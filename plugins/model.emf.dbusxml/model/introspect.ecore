@@ -35,6 +35,8 @@
         <details key="name" value="value"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" upperBound="-1"
+        eType="#//AnnotationType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArgType">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

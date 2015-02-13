@@ -7,6 +7,9 @@
       <annotation name='org.gtk.GDBus.Annotation' value='OnProperty'/>
     </property>
     <annotation name='org.gtk.GDBus.Annotation' value='OnInterface'/>
+    <annotation name="org.gtk.GDBus.Annotation" value="OnInterface">
+      <annotation name="org.gtk.GDBus.Annotation" value="OnAnnotation_YesThisIsCrazy"/>
+    </annotation>
     <method name="m1">
       <annotation name='org.gtk.GDBus.Annotation' value='OnMethod'/>
       <doc>

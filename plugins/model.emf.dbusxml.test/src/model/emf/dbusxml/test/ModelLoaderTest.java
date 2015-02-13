@@ -50,9 +50,15 @@ public class ModelLoaderTest {
 		assertNotNull(i);
 
 		// annotations on interface level
-		assertEquals(1, i.getAnnotation().size());
+		assertEquals(2, i.getAnnotation().size());
 		AnnotationType annoInterface = i.getAnnotation().get(0);
 		assertEquals("OnInterface", annoInterface.getValue());
+		
+		// annotations on annotations on interface level
+		AnnotationType anno1Interface = i.getAnnotation().get(1);
+		assertEquals("OnInterface", anno1Interface.getValue());
+		AnnotationType annoOnAnno1Interface = anno1Interface.getAnnotation().get(0);
+		assertEquals("OnAnnotation_YesThisIsCrazy", annoOnAnno1Interface.getValue());
 		
 		// general structure of interface
 		assertEquals(1, i.getProperty().size());
@@ -83,7 +89,6 @@ public class ModelLoaderTest {
 		assertEquals(1, s.getAnnotation().size());
 		AnnotationType annoSignal = s.getAnnotation().get(0);
 		assertEquals("OnSignal", annoSignal.getValue());
-
 	}
 
 	
