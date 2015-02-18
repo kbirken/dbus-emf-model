@@ -20,7 +20,6 @@ import model.emf.dbusxml.PropertyType;
 import model.emf.dbusxml.SignalType;
 import model.emf.dbusxml.util.DbusxmlResourceFactoryImpl;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
