@@ -126,13 +126,11 @@ public class ModelLoaderTest {
 		}
 	}
 	
-	private String content (EList<DocType> it) {
+	private String content (DocType it) {
 		String content = "";
-		for (Iterator<DocType> i1 = it.iterator(); i1.hasNext();) {
-			for (Iterator<String> i2 = i1.next().getLine().iterator(); i2.hasNext();) {
-				content = content.concat(i2.next());
-			}
-	    }
+		for (Iterator<String> i = it.getLine().iterator(); i.hasNext();) {
+			content = content.concat(i.next());
+		}
 		return content;
 	}
 

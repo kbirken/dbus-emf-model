@@ -470,7 +470,7 @@
         <details key="name" value="type"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="doc" upperBound="-1" eType="#//DocType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doc" eType="#//DocType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignalType">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
