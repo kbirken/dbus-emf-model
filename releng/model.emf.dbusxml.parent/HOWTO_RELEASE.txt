@@ -1,0 +1,2 @@
+export MAVEN_OPTS="-Xmx2048M -XX:PermSize=92M -XX:MaxPermSize=384M"
+mvn org.eclipse.tycho:tycho-versions-plugin:0.22.0:set-version -DnewVersion=0.7.9-SNAPSHOT
