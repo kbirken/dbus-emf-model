@@ -21,6 +21,9 @@ public class DBusBasicType extends DBusType {
 	public static final DBusBasicType DBUS_TYPE_DOUBLE  = new DBusBasicType("Double");
 	public static final DBusBasicType DBUS_TYPE_STRING  = new DBusBasicType("String");
 	public static final DBusBasicType DBUS_TYPE_VARIANT = new DBusBasicType("Variant");
+	public static final DBusBasicType DBUS_TYPE_SIGNATURE = new DBusBasicType("Signature");
+	public static final DBusBasicType DBUS_TYPE_OBJECT_PATH = new DBusBasicType("Object_Path");
+	public static final DBusBasicType DBUS_TYPE_UNIX_FD = new DBusBasicType("Unix_Fd");
 
 	private DBusBasicType (String name) {
 		super(name);

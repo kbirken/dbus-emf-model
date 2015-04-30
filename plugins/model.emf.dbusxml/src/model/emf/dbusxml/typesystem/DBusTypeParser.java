@@ -102,14 +102,14 @@ public class DBusTypeParser {
 			case 'd': res = DBusBasicType.DBUS_TYPE_DOUBLE; break;
 			case 's': res = DBusBasicType.DBUS_TYPE_STRING; break;
 			
-			// object path - will be converted to String type without further checks
-			case 'o': res = DBusBasicType.DBUS_TYPE_STRING; break;
+			// object path - will be converted to Object_Path type without further checks
+			case 'o': res = DBusBasicType.DBUS_TYPE_OBJECT_PATH; break;
 	
-			// type signature - will be converted to String type without further checks
-			case 'g': res = DBusBasicType.DBUS_TYPE_STRING; break;
+			// type signature - will be converted to Signature without further checks
+			case 'g': res = DBusBasicType.DBUS_TYPE_SIGNATURE; break;
 			
-			// UNIX file descriptor - will be mapped to UINT32 type without further checks
-			case 'h': res = DBusBasicType.DBUS_TYPE_UINT32; break;
+			// UNIX file descriptor - will be mapped to Unix_Fd type without further checks
+			case 'h': res = DBusBasicType.DBUS_TYPE_UNIX_FD; break;
 	
 			// complex types
 			case 'a': res = parseArrayType(); break;
