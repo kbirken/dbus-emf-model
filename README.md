@@ -29,3 +29,7 @@ Installation is performed by the following steps:
 
 dbus-emf-model is used by the Franca IDL transformation framework, which is currently hosted on Eclipse Labs: http://code.google.com/a/eclipselabs.org/p/franca/. It is used by the Franca/DBus-connector in order to transform any Franca-related IDL to D-Bus Introspection XML files.
 
+
+## License
+
+Eclipse Public License 1.0 (EPL 1.0), see license file _epl-v10.html_ enclosed.
