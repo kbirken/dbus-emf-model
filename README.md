@@ -12,7 +12,7 @@ NOTE: This project has moved to github.com/kbirken, because the original locatio
 
 There is an update site as part of the git repository. Here is the URL:
 
-http://dbus-emf-model.eclipselabs.org.codespot.com/git/update_site/releases/
+http://kbirken.github.io/dbus-emf-model/releases/
 
 Installation is performed by the following steps:
 
