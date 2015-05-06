@@ -5,7 +5,7 @@ This Eclipse plugin project provides an EMF ecore model for the D-Bus Introspect
 (see http://dbus.freedesktop.org for more details on D-Bus).
 
 NOTE: This project has moved to github.com/kbirken, because the original location
-(EclipseLabs / GoogleCode) will be shutdown in August 2015.
+(EclipseLabs / GoogleCode) will be closed in late 2015.
 
 
 ## Installation
