@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/model.emf.dbusxml.feature_0.7.5.201308271430.jar" id="model.emf.dbusxml.feature" version="0.7.5.201308271430">
-      <category name="dbusxml"/>
-   </feature>
-   <category-def name="dbusxml" label="D-Bus Introspection ecore model"/>
-</site>
