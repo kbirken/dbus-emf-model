@@ -5,7 +5,7 @@ This Eclipse plugin project provides an EMF ecore model for the D-Bus Introspect
 (see http://dbus.freedesktop.org for more details on D-Bus).
 
 NOTE: This project has moved to github.com/kbirken, because the original location
-(EclipseLabs / GoogleCode) will be closed in late 2015.
+(EclipseLabs / GoogleCode) has been closed in late 2015.
 
 
 ## Installation
@@ -18,7 +18,7 @@ Installation is performed by the following steps:
 
 1. Download _Eclipse Modeling Tools_ distribution for _Eclipse Indigo_ from [http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor here] and install it.
   - dbus-emf-model requires the Eclipse Modeling Framework (EMF), which is preinstalled in this Eclipse distribution.
-  - dbus-emf-model is using Java 6. Please ensure that Eclipse is running with a JDK1.6.x installation.
+  - dbus-emf-model is using Java 7 (but will also work with later Java versions). Please ensure that Eclipse is running with a JDK 7 or JDK 8 installation.
 2. Start _eclipse.exe_ and create a new workspace.
 3. Choose _Help > Install New Software ..._ and add a new update site with the above URL.
 4. Install the D-Bus EMF Model feature.
