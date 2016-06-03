@@ -9,6 +9,6 @@
 	</parent>
 
 	<artifactId>model.emf.dbusxml.releng.updatesite</artifactId>
-	<packaging>eclipse-update-site</packaging>
+	<packaging>eclipse-repository</packaging>
 	<groupId>model.emf.dbusxml</groupId>
 </project>
