@@ -10,7 +10,7 @@ NOTE: This project has moved to github.com/kbirken, because the original locatio
 
 ## Installation
 
-There is an update site as part of the git repository. Here is the URL:
+There is an update site as part of the git repository. Here is the URL (note that this will only serve as P2 repository, it will not work in a browser):
 
 http://kbirken.github.io/dbus-emf-model/releases/
 
