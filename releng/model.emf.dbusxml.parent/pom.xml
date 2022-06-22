@@ -20,6 +20,8 @@
 	</properties>
 
     <modules>
+    		<!-- target platform -->
+			<module>../../releng/model.emf.dbusxml.target</module>
     		<!-- actual code modules -->
             <module>../../plugins/model.emf.dbusxml</module>
             <module>../../plugins/model.emf.dbusxml.edit</module>
