@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: model.emf.dbusxml.test;singleton:=true 
 Bundle-Version: 0.8.1.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.junit,
- model.emf.dbusxml;bundle-version="0.7.6"
+ model.emf.dbusxml;bundle-version="0.8.0"
 Bundle-Name: D-Bus Introspection Model Tests
 Bundle-Vendor: itemis AG
