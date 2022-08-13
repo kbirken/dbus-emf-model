@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: model.emf.dbusxml.edit;singleton:=true
 Automatic-Module-Name: model.emf.dbusxml.edit
-Bundle-Version: 0.8.1.qualifier
+Bundle-Version: 0.9.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: model.emf.dbusxml.provider.IntrospectEditPlugin$Implementation
 Bundle-Vendor: %providerName
