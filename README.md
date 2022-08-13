@@ -16,7 +16,7 @@ http://kbirken.github.io/dbus-emf-model/releases/
 
 Installation is performed by the following steps:
 
-1. Download _Eclipse Modeling Tools_ distribution for _Eclipse 2020-09_ from [https://www.eclipse.org/downloads/packages/release/2020-09/r here] and install it. Alternatively, use the [https://www.eclipse.org/downloads/packages/installer Eclipse Installer].
+1. Download _Eclipse Modeling Tools_ distribution for [_Eclipse 2020-09_](https://www.eclipse.org/downloads/packages/release/2020-09/r) and install it. Alternatively, use the [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer).
   - dbus-emf-model requires the Eclipse Modeling Framework (EMF), which is preinstalled in this Eclipse distribution.
   - dbus-emf-model is using Java 8 (but will also work with later Java versions). Please ensure that Eclipse is running with a JDK 8 installation.
 2. Start _eclipse.exe_ and create a new workspace.
@@ -27,7 +27,7 @@ Installation is performed by the following steps:
 
 ## Uses of dbus-emf-model
 
-dbus-emf-model is used by the Franca IDL transformation framework, which is also hosted on github: https://github.com/franca/franca. It is used by the Franca/DBus-connector in order to transform any Franca-related IDL to D-Bus Introspection XML files.
+dbus-emf-model is used by the Franca IDL transformation framework, which is also hosted [on github](https://github.com/franca/franca). It is used by the Franca/DBus-connector in order to transform any Franca-related IDL to D-Bus Introspection XML files.
 
 
 ## License
