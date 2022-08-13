@@ -10,7 +10,7 @@ NOTE: This project has moved to github.com/kbirken, because the original locatio
 
 ## Installation
 
-There is an update site as part of the git repository. Here is the URL:
+There is an update site as part of the git repository. Here is the URL (note that this will only serve as P2 repository, it will not work in a browser):
 
 http://kbirken.github.io/dbus-emf-model/releases/
 
@@ -27,7 +27,7 @@ Installation is performed by the following steps:
 
 ## Uses of dbus-emf-model
 
-dbus-emf-model is used by the Franca IDL transformation framework, which is currently hosted on Eclipse Labs: http://code.google.com/a/eclipselabs.org/p/franca/. It is used by the Franca/DBus-connector in order to transform any Franca-related IDL to D-Bus Introspection XML files.
+dbus-emf-model is used by the Franca IDL transformation framework, which is also hosted on github: https://github.com/franca/franca. It is used by the Franca/DBus-connector in order to transform any Franca-related IDL to D-Bus Introspection XML files.
 
 
 ## License
