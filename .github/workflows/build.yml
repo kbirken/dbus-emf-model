@@ -17,3 +17,10 @@ jobs:
         run: |
           cd releng/model.emf.dbusxml.parent
           mvn --batch-mode --update-snapshots clean install
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v2
+        with:
+          check_name: "Unit Tests"
+          report_paths: 'plugins/*/target/surefire-reports/*.xml'
+          fail_on_failure: true
+          summary: true
