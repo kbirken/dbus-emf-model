@@ -3,9 +3,9 @@
 <repository name='dbus-emf-model update site (releases)'
     type='org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository' version='1.0.0'>
   <properties size='1'>
-    <property name='p2.timestamp' value='1247702433'/>
+    <property name='p2.timestamp' value='1247702435'/>
   </properties>
-  <children size='12'>
+  <children size='13'>
       <child location='0.7.0'/>
       <child location='0.7.1'/>
       <child location='0.7.2'/>
@@ -18,5 +18,6 @@
       <child location='0.7.9'/>
       <child location='0.8.0'/>
       <child location='0.8.1'/>
+      <child location='0.9.0'/>
   </children>
 </repository>
