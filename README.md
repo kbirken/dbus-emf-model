@@ -7,6 +7,7 @@ This Eclipse plugin project provides an EMF ecore model for the D-Bus Introspect
 NOTE: This project has moved to github.com/kbirken, because the original location
 (EclipseLabs / GoogleCode) has been closed in late 2015.
 
+[![Build](https://github.com/kbirken/dbus-emf-model/actions/workflows/build.yml/badge.svg)](https://github.com/kbirken/dbus-emf-model/actions/workflows/build.yml)
 
 ## Installation
 
